@@ -4,9 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 
-import GlobalStyle from 'styles/global';
-import stores from 'core/stores';
-
 import App from './App';
 
 const root = document.getElementById('root');
@@ -16,8 +13,7 @@ if (root == null) {
 }
 
 ReactDOM.render(
-  <Provider {...stores}>
-    <GlobalStyle />
+  <Provider>
     <App />
   </Provider>,
   root

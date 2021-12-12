@@ -1,7 +1,6 @@
 // @flow
 
 import styled, { keyframes } from 'styled-components';
-import { dark, primary } from 'styles/colors';
 
 const rotate = keyframes`
   from {
@@ -13,7 +12,7 @@ const rotate = keyframes`
 `;
 
 export const Preloader = styled.div`
-  border: 3px solid ${primary};
+  border: 3px solid darkgreen;
   border-top: 3px solid #e9e9e9;
   border-radius: 50%;
   margin: 0 auto;
@@ -35,7 +34,7 @@ export const PreloaderWrapper = styled.div`
 
   span {
     margin-top: 10px;
-    color: ${dark};
+    color: black;
 
     :empty {
       display: none
