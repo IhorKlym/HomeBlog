@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+.env
+.env.development
+.env.staging
+.env.production
+.git
+.githooks
+.deploy/**
+dist/**
+dump.rdb
+yarn-error.log
+node_modules/**

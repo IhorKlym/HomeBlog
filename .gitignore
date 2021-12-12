@@ -1,0 +1,11 @@
+coverage
+reports
+node_modules
+npm-debug.log
+.DS_Store
+dist
+.env
+.env.remote
+.idea
+build
+.vscode

@@ -1,0 +1,29 @@
+[ignore]
+./dist
+./node_modules
+
+[untyped]
+.*/node_modules/draft-js/lib/.*
+
+[include]
+./src
+
+[libs]
+
+[lints]
+
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.name_mapper='^\(.*\)' -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='^helpers' -> '<PROJECT_ROOT>/src/core/helpers'
+module.name_mapper='^hooks' -> '<PROJECT_ROOT>/src/core/hooks'
+module.name_mapper='^services' -> '<PROJECT_ROOT>/src/core/services'
+module.name_mapper='^components' ->'<PROJECT_ROOT>/src/core/components'
+module.name_mapper='^constants' ->'<PROJECT_ROOT>/src/core/constants'
+module.name_mapper='^styles' ->'<PROJECT_ROOT>/src/core/styles'
+module.name_mapper='^icons' ->'<PROJECT_ROOT>/src/core/styles/icons'
+module.name_mapper='^api' ->'<PROJECT_ROOT>/src/core/api'
+esproposal.decorators=ignore
+
+[strict]

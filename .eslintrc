@@ -1,0 +1,58 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "plugins": [
+    "prettier",
+    "flowtype",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "flowtype/define-flow-type": 1,
+    "indent": ["error", 2],
+    "eol-last": ["error", "always"],
+    "quotes": ["error", "single"],
+    "comma-dangle": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "space-before-function-paren": "off",
+    "react/static-property-placement": ["error", "static public field"],
+    "react/state-in-constructor": ["error", "never"],
+    "react/prefer-stateless-function": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "linebreak-style": "off",
+    "global-require": "off",
+    "semi": "warn",
+    "arrow-body-style": "error",
+    "no-multiple-empty-lines": ["warn", { "max": 1 }],
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+    "one-var": "off",
+    "no-async-promise-executor": "off",
+    "lines-between-class-members": "off",
+    "prefer-promise-reject-errors": "off",
+    "consistent-return": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
