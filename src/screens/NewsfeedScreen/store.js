@@ -15,7 +15,6 @@ class NewsfeedScreenStore {
     this.loading = true;
     try {
       const { data } = yield postsApi.getPosts();
-      console.log(data);
       this.posts = data;
       this.loading = false;
       this.errors = [];

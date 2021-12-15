@@ -10,6 +10,12 @@ class PostScreenStore {
   @observable post: any = {};
   @observable errors: any[] = [];
 
+
+  @action.bound
+  handleChange({ target: { name, value } }: { target: HTMLInputElement }) {
+    this.post[name] = value;
+  }
+
   getPost = flow(function* fetch(postId: string) {
     this.loading = true;
     try {
@@ -32,6 +38,8 @@ class PostScreenStore {
       this.loading = false;
     } catch (error) {
       this.errors = error.errors;
+
+      console.log(this.errors)
       this.loading = false;
     }
   });

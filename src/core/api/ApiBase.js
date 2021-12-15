@@ -7,35 +7,44 @@ export default class Api {
   serializerType: string;
   serializerOptions: any;
 
-  constructor(backendUrl: string = 'https://reqres.in/api') {
+  constructor(backendUrl: string = "http://localhost:3000/api/v1") {
     this.backendUrl = backendUrl;
-    this.serializerType = '';
+    this.serializerType = "";
     this.serializerOptions = {};
   }
 
-  request = async (
-    url: string,
-    params: any = {}
-  ) => new Promise<any>(async (resolve, reject): any => {
-    const headers = {
-      'Accept': 'application/vnd.api+json',
-      'Content-Type': 'application/json; charset=utf-8',
-      'Access-Control-Allow-Origin': '*'
-    };
+  request = async (url: string, params: any = {}) =>
+    new Promise<any>(async (resolve, reject): any => {
+      const headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, Accept",
+        Authorization:
+          "Bearer 97f85fa997125c758a67213c44e1c0543a603f3819b31456b9",
+      };
 
-    try {
-      const response = await fetch(`${this.backendUrl}/${url}`, { headers, ...params });
       try {
-        if (response.status === 204) return resolve({ data: {}, meta: {} });
-        const json = await response.json();
-        return resolve(json);
+        const response = await fetch(`${this.backendUrl}/${url}`, {
+          headers,
+          ...params,
+        });
+        try {
+          if (response.status === 204) return resolve({ data: {}, meta: {} });
+          let json = response.data;
+          if (response.json) json = await response.json();
+
+          if (response.ok || (response.status >= 200 && response.status < 204))
+            return resolve(json);
+
+          return reject(json);
+        } catch (error) {
+          return reject(error);
+        }
       } catch (error) {
         const { message } = error;
+        console.log(message);
         return reject(message);
       }
-    } catch (error) {
-      const { message } = error;
-      return reject(message);
-    }
-  });
+    });
 }

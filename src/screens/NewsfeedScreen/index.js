@@ -21,19 +21,18 @@ const NewsfeedScreen = () => {
   return (
     <div>
       {posts.length ? 
-        posts.map((user) => {
+        posts.map((post) => {
           return (
-            <div key={user.id} onClick={() => handleUserClick(user.id)}>
+            <div key={post.id} onClick={() => handleUserClick(post.id)}>
               <p>
-                <strong>{user.first_name}</strong>
+                <strong>{post.title}</strong>
               </p>
-              <p>{user.email}</p>
-              <img key={user.avatar} src={user.avatar} />
+              <p>{post.text}</p>
             </div>
           );
         })
       : (
-        'No Users'
+        'No Posts'
       )}
     </div>
   );
