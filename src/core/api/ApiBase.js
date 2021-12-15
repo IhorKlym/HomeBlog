@@ -16,12 +16,10 @@ export default class Api {
   request = async (url: string, params: any = {}) =>
     new Promise<any>(async (resolve, reject): any => {
       const headers = {
-        Accept: "application/json",
+        'Accept': "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, Content-Type, Accept",
-        Authorization:
-          "Bearer 97f85fa997125c758a67213c44e1c0543a603f3819b31456b9",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, Accept"
       };
 
       try {
